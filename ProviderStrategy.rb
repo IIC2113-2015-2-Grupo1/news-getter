@@ -4,7 +4,7 @@ class ProviderStrategy
 
   #este metodo recibe la ultima noticia que se busco de la fuente
   #y retorna una lista de todas las noticias nuevas
-  def get_news(last)
+  def run(last)
   end
 
 end

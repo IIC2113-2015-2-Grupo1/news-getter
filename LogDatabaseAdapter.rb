@@ -5,12 +5,12 @@ require "sqlite3"
 
 class LogDatabseAdapter
 
-  #Este metodo inserta una nueva noticia a la base de datos
-  def insert(title, source, date, image)
+  #Este metodo inserta nuevas noticias a la base de datos
+  def save(news)
   end
 
-  #Este metodo edita una noticia de la base de datos
-  def update(title, source, date, image)
+  #revisa la base de datos para ver si contiene la noticia
+  def contains
   end
 
 end

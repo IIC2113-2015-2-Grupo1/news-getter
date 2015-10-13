@@ -1,12 +1,28 @@
 #Esta clase administra los threads que buscan noticias nuevas
 class Balancer
 
-  #recibe una lista de threads que debe activar
-  def activate(list)
+  #empieza los threads del pool
+  def startThreads
   end
 
-  #administra los threads para que este siendo bien utilizados
-  def manage
+  #procesa una estrategia
+  def process(startegy)
+  end
+
+  #anade una estrategia a la cola
+  def queue(strategy)
+  end
+
+  #verifica el estado de un thread
+  def checkThreadStatus(thread)
+  end
+
+  #reinicia un thread
+  def restartThread(thread)
+  end
+
+  #monitorea todos los threads
+  def monitorThreads
   end
 
 end
