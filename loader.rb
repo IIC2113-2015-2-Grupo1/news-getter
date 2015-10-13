@@ -1,5 +1,4 @@
 # Loads the strategy patterns that fetch fresh news.
-
 class Loader
 
   # loads a strategy

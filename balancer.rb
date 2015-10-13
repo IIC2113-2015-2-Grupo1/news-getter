@@ -1,5 +1,4 @@
 # Manaages the threads that gets fresh news
-
 class Balancer
 
   # starts the thread pool. doesn't receive
@@ -31,5 +30,4 @@ class Balancer
   # receives nothing returns void
   def monitorThreads
   end
-
 end
