@@ -2,8 +2,8 @@
 
 class ProviderStrategy
 
- # Recieves the last news fetch from the source
- # and returns a list of new news
+ # Recieves the last news (string) fetch from the source
+ # and returns a list of new news (list<string>)
   def run(last)
   end
 

@@ -2,8 +2,9 @@
 
 class Loader
 
-  # loads a given strategy
-  def load(pattern)
+  # loads a strategy
+  # receives nothing returns a ProviderStrategy
+  def getProviders()
   end
 
 end
