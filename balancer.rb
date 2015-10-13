@@ -1,9 +1,7 @@
 # Manaages the threads that gets fresh news
-
 class Balancer
-
   # starts the thread pool
-  def startThreads
+  def start_threads
   end
 
   # process a given strategy
@@ -15,15 +13,14 @@ class Balancer
   end
 
   # verifies the current state of a thread
-  def checkThreadStatus(thread)
+  def check_thread_status(thread)
   end
 
   # restarts a given thread
-  def restartThread(thread)
+  def restart_thread(thread)
   end
 
   # checks all threads
-  def monitorThreads
+  def monitor_threads
   end
-
 end
