@@ -1,2 +1,5 @@
 Style/Encoding:
-  Enabled: true
+  Enabled: false
+
+Lint/UnusedMethodArgument:
+  Enabled: false
