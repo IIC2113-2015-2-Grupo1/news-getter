@@ -27,3 +27,17 @@ $ rackup -p 5000
 # Available on:
 # http://localhost:5000/
 ```
+
+### Deployment
+
+```sh
+# Build
+$ docker build --no-cache --rm --tag=news-getter .
+
+# Run
+$ docker run --publish 5000:5000 --rm --name news-getter news-getter
+
+# Push to hub
+$ docker tag news-getter iic2113grupo1/news-getter
+$ docker push iic2113grupo1/news-getter
+```
