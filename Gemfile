@@ -7,12 +7,13 @@ gem 'rake'
 
 # Declare the sinatra dependency
 gem 'sinatra'
+gem 'sinatra-contrib'
 
 # Puma webserver
 gem 'puma'
 
 # Crons
-gem 'whenever', require: false
+gem 'rufus-scheduler'
 
 # Setup our test group and require rspec
 group :test do
