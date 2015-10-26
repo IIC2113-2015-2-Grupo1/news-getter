@@ -15,6 +15,9 @@ gem 'puma'
 # Crons
 gem 'rufus-scheduler'
 
+# Threading
+gem 'concurrent-ruby'
+
 # Setup our test group and require rspec
 group :test do
   # Styleguide
