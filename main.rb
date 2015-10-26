@@ -1,20 +1,17 @@
-# encoding: utf-8
+# encoding: UTF-8
 
 require 'sinatra'
 require 'sinatra/json'
-require 'rufus/scheduler'
+
+require './scheduler'
 
 configure { set :server, :puma }
 
 # Main class
 class Main < Sinatra::Base
-  scheduler = Rufus::Scheduler.new
+  _ = Scheduler.new
 
   get '/' do
     json status: 'on'
-  end
-
-  scheduler.every '1s' do
-    puts 'rufus task'
   end
 end
