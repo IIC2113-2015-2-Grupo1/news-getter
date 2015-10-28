@@ -12,6 +12,9 @@ gem 'sinatra-contrib'
 # Puma webserver
 gem 'puma'
 
+# Scrapping
+gem 'nokogiri'
+
 # Crons
 gem 'rufus-scheduler'
 
