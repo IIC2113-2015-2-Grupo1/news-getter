@@ -9,7 +9,7 @@ class DatabaseAdapter
   attr_reader :conn
 
   def initialize
-    @conn = PG.connect( dbname: ENV['DBNAME'], user: 'felipe', password: '' )
+    @conn = PG.connect( dbname: ENV['DBNAME'], user: ENV['DBUSER'], password: ENV['DBPASSWORD'] )
   end
 
   # news should be a Hash
