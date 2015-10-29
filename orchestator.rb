@@ -23,7 +23,10 @@ class Orchestator
 
   # Starts the Orchestator
   def start
-    @loader.providers.each { |p| @balancer.queue(p) }
+    @loader.providers.each do |provider|
+      provider.persistence_delegate = self
+      @balancer.queue(provider)
+    end
   end
 
   # It checks if a news has already been downloaded and saved

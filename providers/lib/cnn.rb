@@ -1,8 +1,11 @@
 # encoding: UTF-8
 
+require_relative './../provider_strategy'
+
 # CNN Provider
-class CNNProvider
+class CNNProvider < ProviderStrategy
   def run(last)
-    puts 'hola!'
+    # TODO: complete
+    @persistence_delegate.notify_new(nil)
   end
 end
