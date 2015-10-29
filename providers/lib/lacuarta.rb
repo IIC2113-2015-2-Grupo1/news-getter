@@ -3,7 +3,7 @@ require 'open-uri'
 require_relative './../provider_strategy'
 
 # Provider del diario LaCuarta
-class LaCuartaProvider
+class LaCuartaProvider < ProviderStrategy
   def run(last)
     newsdoc = Nokogiri::HTML(open('http://www.lacuarta.com/feed/manager?type=rss&sc=TEFDVUFSVEE='))
 
