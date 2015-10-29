@@ -15,7 +15,7 @@ class Balancer
   def start_threads
     # TODO: check if this is correct
     @pool.post do
-      while true
+      loop do
         process(@work_queue.pop)
       end
     end
