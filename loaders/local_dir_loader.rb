@@ -7,7 +7,10 @@ require_relative './loader'
 # Gathers the different ProviderStrategy's in order
 # to give it to the Orchestator.
 class LocalDirLoader < Loader
-  def initialize
+  DEFAULT_DIRECTORY = Pathname.new(__dir__) + '..' + 'providers' + 'lib'
+
+  def initialize(directory = DEFAULT_DIRECTORY)
+    @directory = directory
     @strategies = []
   end
 
@@ -19,14 +22,9 @@ class LocalDirLoader < Loader
     @strategies.concat((after - before).map(&:new))
   end
 
-  # lib path
-  protected def dir_path
-    Pathname.new(__dir__) + '..' + 'providers' + 'lib'
-  end
-
   # read directory contents
   protected def read_dir_contents
-    Dir.entries(dir_path).map { |e| dir_path + e }
+    Dir.entries(@directory).map { |e| @directory + e }
   end
 
   # return only ruby files
