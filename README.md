@@ -28,6 +28,11 @@ $ rackup --host 0.0.0.0 -p 5000
 # http://localhost:5000/
 ```
 
+### Test
+```sh
+$ rspec
+```
+
 ### Development with Docker
 
 ```sh
