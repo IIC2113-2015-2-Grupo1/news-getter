@@ -19,4 +19,9 @@ class Scheduler
   def start_orchestator
     Orchestator.instance.start
   end
+
+  # Stop runing
+  def stop
+    @scheduler.shutdown
+  end
 end
