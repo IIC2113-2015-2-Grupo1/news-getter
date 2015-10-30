@@ -12,6 +12,9 @@ gem 'sinatra-contrib'
 # Puma webserver
 gem 'puma'
 
+# Database
+gem 'pg'
+
 # Scrapping
 gem 'nokogiri'
 
