@@ -28,6 +28,7 @@ group :development do
   # Metrics
   gem 'metric_fu'
 end
+
 # Setup our test group and require rspec
 group :test do
   # Styleguide

@@ -7,9 +7,10 @@ Make sure you have **Ruby 2.2.3** installed.
 
 ### Setup
 
-Install [bunlder](http://bundler.io/):
+Install [bundler](http://bundler.io/) and [Nokogiri](http://www.nokogiri.org/):
 ```sh
 $ gem install --no-ri --no-rdoc bundler
+$ gem install --no-ri --no-rdoc nokogiri
 
 # if using rbenv
 $ rbenv rehash
