@@ -12,8 +12,14 @@ gem 'sinatra-contrib'
 # Puma webserver
 gem 'puma'
 
+# Scrapping
+gem 'nokogiri'
+
 # Crons
 gem 'rufus-scheduler'
+
+# Threading
+gem 'concurrent-ruby'
 
 # Setup our test group and require rspec
 group :test do
