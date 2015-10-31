@@ -9,6 +9,6 @@ class CNNProvider < ProviderStrategy
 
     # TODO: complete
 
-    @persistence_delegate.notify_new(newsitem)
+    @persistence_delegate.notify_new(nil)
   end
 end

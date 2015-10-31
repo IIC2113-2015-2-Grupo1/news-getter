@@ -29,6 +29,16 @@ $ rackup --host 0.0.0.0 -p 5000
 # http://localhost:5000/
 ```
 
+### Test
+```sh
+$ rspec
+```
+
+### Metric_FU
+```sh
+$ rake metrics:all
+```
+
 ### Development with Docker
 
 ```sh

@@ -24,6 +24,7 @@ class Orchestator
   # Starts the Orchestator
   def start
     @loader.providers.each do |provider|
+      puts provider
       provider.persistence_delegate = self
       @balancer.queue(provider)
     end
@@ -33,6 +34,7 @@ class Orchestator
   # to the database. If it hasn't, then it procedes to save it.
   # It recieves the news URL as a parameter.
   def should_download(string)
+    true
   end
 
   # Notifies the PersistenceDelegate's receivers when a new news
