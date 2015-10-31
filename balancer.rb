@@ -25,6 +25,7 @@ class Balancer
   # receives a ProviderStrategy returns void
   def process(strategy)
     # TODO: process, change DateTime
+    puts 'process', strategy
     strategy.run(DateTime.now)
   end
 

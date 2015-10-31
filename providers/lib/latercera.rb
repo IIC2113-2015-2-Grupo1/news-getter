@@ -12,7 +12,7 @@ class LaTerceraProvider < ProviderStrategy
       title = node.xpath('title/text()')
       subtitle = node.xpath('description/text()').text
       url = node.xpath('guid/text()')
-      
+
       return unless @persistence_delegate.should_download?(url)
 
       noticedoc = Nokogiri::HTML(open(url.to_s))
