@@ -3,6 +3,7 @@
 require 'pathname'
 
 require_relative './loader'
+require_relative './../providers/provider_strategy'
 
 # Gathers the different ProviderStrategy's in order
 # to give it to the Orchestator.
@@ -19,7 +20,8 @@ class LocalDirLoader < Loader
     before = ObjectSpace.each_object(Class).to_a
     filter_dir_contents(read_dir_contents).each { |f| require f }
     after = ObjectSpace.each_object(Class).to_a
-    @strategies.concat((after - before).map(&:new))
+    classes = (after - before).select { |c| c <= ProviderStrategy }
+    @strategies.concat(classes.map(&:new))
   end
 
   # read directory contents

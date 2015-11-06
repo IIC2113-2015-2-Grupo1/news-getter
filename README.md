@@ -21,6 +21,11 @@ Install gems:
 $ bundle install
 ```
 
+Create Postgres database:
+```sh
+CREATE DATABASE "news-getter";
+```
+
 ### Run
 ```sh
 $ rackup --host 0.0.0.0 -p 5000
@@ -32,6 +37,12 @@ $ rackup --host 0.0.0.0 -p 5000
 ### Test
 ```sh
 $ rspec
+```
+
+### Deploy
+You need a Postgres container running on port `5432` with host named `db`.
+```sh
+$ export APP_ENV="PRODUCTION"
 ```
 
 ### Metric_FU

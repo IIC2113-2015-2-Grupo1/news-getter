@@ -1,22 +1,24 @@
 # encoding: UTF-8
 
 require 'concurrent'
+require 'thread'
 
 # Manaages the threads that gets fresh news
 class Balancer
   def initialize
     @work_queue = Queue.new
-    @pool = Concurrent::CachedThreadPool.new
-    start_threads
+    @pool = start_threads
   end
 
   # starts the thread pool. doesn't receive
   # no paramaters returns void
   def start_threads
-    # TODO: check if this is correct
-    @pool.post do
-      loop do
-        process(@work_queue.pop)
+    4.times.map do
+      Thread.new do
+        loop do
+          strategy = @work_queue.pop
+          strategy.run(DateTime.now)
+        end
       end
     end
   end
@@ -25,14 +27,14 @@ class Balancer
   # receives a ProviderStrategy returns void
   def process(strategy)
     # TODO: process, change DateTime
-    puts 'process', strategy
+    puts 'process', strategy, '-----'
     strategy.run(DateTime.now)
   end
 
   # adds a strategy to the queue
   # receives a ProviderStrategy returns void
   def queue(strategy)
-    @work_queue << strategy
+    @work_queue.push(strategy)
   end
 
   # restarts a given thread

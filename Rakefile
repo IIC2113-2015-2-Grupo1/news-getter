@@ -1,8 +1,8 @@
 # encoding: utf-8
 require 'metric_fu'
+require 'rubocop/rake_task'
 
 task :default do
-  puts 'TODO: configure crons'
 end
 
 MetricFu::Configuration.run do |config|
@@ -14,3 +14,5 @@ MetricFu::Configuration.run do |config|
     cane.no_readme = 'y'
   end
 end
+
+RuboCop::RakeTask.new
