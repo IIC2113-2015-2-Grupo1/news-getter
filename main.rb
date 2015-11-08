@@ -3,7 +3,7 @@
 require 'sinatra'
 require 'sinatra/json'
 
-require './scheduler'
+require_relative './scheduler'
 
 configure { set :server, :puma }
 

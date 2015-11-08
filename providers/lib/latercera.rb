@@ -1,5 +1,4 @@
 require 'nokogiri'
-require 'open-uri'
 require_relative './../provider_strategy'
 
 # Provider del diario LaTercera
