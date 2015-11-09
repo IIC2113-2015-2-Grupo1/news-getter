@@ -1,0 +1,30 @@
+{
+  "regions" : [
+    {"Arica y Parinacota": 1 },
+    {"Arica" : 1},
+    {"Parinacota" : 1},
+    {"Tarapacá" : 2},
+    {"Iquique" : 2},
+    {"Antofagasta" : 3},
+    {"Atacama" : 4},
+    {"Coquimbo" : 5},
+    {"La Serena" : 5},
+    {"Coquimbo" : 5},
+    {"Valparaíso" : 6},
+    {"Metropolitana de Santiago" : 7},
+    {"Santiago" : 7},
+    {"O'Higgins" : 8},
+    {"Rancagua" : 8},
+    {"Maule" : 9},
+    {"Talca" : 9},
+    {"Bío-Bío" : 10},
+    {"La Araucanía" : 11},
+    {"Temuco" : 11},
+    {"Los Ríos" : 12},
+    {"Los Lagos" : 13},
+    {"Aysén" : 14},
+    {"Magallanes" : 15},
+    {"Punta Arenas" : 15}
+
+  ]
+}

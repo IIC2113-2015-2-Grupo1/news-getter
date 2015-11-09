@@ -20,7 +20,12 @@ class LaCuartaProvider < ProviderStrategy
       image = fetch_image noticedoc
       tags = fetch_tags noticedoc
 
-      notice = {title: '#{title}', subtitle: '#{subtitle}', url: '#{url}', tags: '#{tags}', body: '#{body}', image: '#{image}' }
+      notice = {title: "#{title}",
+       subtitle: "#{subtitle}",
+       url: "#{url}",
+       tags: "#{tags}",
+       body: "#{body}",
+      image: "#{image}" }
       @persistence_delegate.notify_new(notice)
     end
     news
