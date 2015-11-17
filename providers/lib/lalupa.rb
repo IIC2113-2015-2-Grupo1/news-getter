@@ -21,7 +21,6 @@ class LaLupa < ProviderStrategy
         body: doc2.xpath('//div[@class="single-article-text"]').text.strip.gsub("\n", ""),
         image: doc2.xpath('//div[@class="single-article-main-image"]/img/@src').text.strip
       }
-      puts notice
       @persistence_delegate.notify_new(notice)
     end
   end
