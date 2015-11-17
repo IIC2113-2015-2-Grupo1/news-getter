@@ -1,3 +1,4 @@
+# encoding: UTF-8
 require 'nokogiri'
 require 'open-uri'
 require_relative './../provider_strategy'
