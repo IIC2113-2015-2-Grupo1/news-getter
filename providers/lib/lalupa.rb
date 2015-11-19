@@ -19,7 +19,7 @@ class LaLupa < ProviderStrategy
         subtitle: doc2.xpath('//h3[@class="single-article-subtitle"]').text.strip,
         url: element.to_s,
         tags: '',
-        body: doc2.xpath('//div[@class="single-article-text"]').text.strip.gsub("\n", ""),
+        body: doc2.xpath('//div[@class="single-article-text"]').text.strip.delete("\n"),
         image: doc2.xpath('//div[@class="single-article-main-image"]/img/@src').text.strip
       }
       @persistence_delegate.notify_new(notice)

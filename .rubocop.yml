@@ -7,3 +7,7 @@ Style/Encoding:
 
 Lint/UnusedMethodArgument:
   Enabled: false
+
+# Add more flexibility
+Metrics/LineLength:
+  Max: 100
