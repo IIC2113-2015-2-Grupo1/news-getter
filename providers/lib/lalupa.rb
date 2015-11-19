@@ -3,18 +3,19 @@ require 'nokogiri'
 require 'open-uri'
 require_relative './../provider_strategy'
 
-# La Lupa de la Constitución Provider
+# La Lupa de la Constitucion Provider
 class LaLupa < ProviderStrategy
   # Inherited method
   def run(last)
-    URL = 'http://www.lalupadelaconstitucion.cl/noticias/'
-    doc = Nokogiri::HTML(open(URL))
+    puts 'Running LaLupa'
+    url = 'http://www.lalupadelaconstitucion.cl/noticias/'
+    doc = Nokogiri::HTML(open(url))
     doc.xpath('//div[contains(@class, "news-box") and not(contains(@class, "constitucion-box"))]//a[not(@href = preceding::*/@href)]/@href').collect do |element|
-      next unless @persistence_delegate.should_download?(element)
+      return false unless @persistence_delegate.should_download?(element.to_s)
       doc2 = Nokogiri::HTML(open(element.to_s))
       notice = {
         title: doc2.xpath('//h2[@class="single-article-title"]').text.strip,
-        source: '',
+        source: 3,
         subtitle: doc2.xpath('//h3[@class="single-article-subtitle"]').text.strip,
         url: element.to_s,
         tags: '',

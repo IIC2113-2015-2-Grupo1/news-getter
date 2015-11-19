@@ -13,11 +13,15 @@ class Balancer
   # starts the thread pool. doesn't receive
   # no paramaters returns void
   def start_threads
-    4.times.map do
+    8.times.map do
       Thread.new do
         loop do
           strategy = @work_queue.pop
-          strategy.run(DateTime.now)
+          begin
+            strategy.run(DateTime.now)
+          rescue
+            puts 'thread error'
+          end
         end
       end
     end

@@ -23,6 +23,7 @@ class Orchestator
 
   # Starts the Orchestator
   def start
+    @loader.providers.count
     @loader.providers.each do |provider|
       provider.persistence_delegate = self
       @balancer.queue(provider)
@@ -32,7 +33,7 @@ class Orchestator
   # It checks if a news has already been downloaded and saved
   # to the database.
   def should_download?(string)
-    @log_db.contains?(string)
+    !@log_db.contains?(string)
   end
 
   # Notifies the PersistenceDelegate's receivers when a new news
