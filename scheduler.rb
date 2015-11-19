@@ -7,7 +7,7 @@ require_relative './orchestator.rb'
 # Class in charge of calling the Orchestator periodically
 # for him to start the news gathering
 class Scheduler
-  def initialize(interval = '2s')
+  def initialize(interval = '8s')
     @scheduler = Rufus::Scheduler.new
     @scheduler.every interval do |job|
       puts 'Running: ' + job.id

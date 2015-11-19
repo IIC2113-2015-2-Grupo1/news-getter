@@ -1,3 +1,7 @@
+# AllCops:
+#   Exclude:
+#     - 'providers/lib/**/*'
+
 Style/Encoding:
   Enabled: false
 

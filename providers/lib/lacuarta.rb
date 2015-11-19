@@ -1,3 +1,4 @@
+# encoding: UTF-8
 require 'nokogiri'
 require 'open-uri'
 require_relative './../provider_strategy'
@@ -5,6 +6,7 @@ require_relative './../provider_strategy'
 # Provider del diario LaCuarta
 class LaCuartaProvider < ProviderStrategy
   def run(last)
+    puts 'Running LaCuarta'
     newsdoc = Nokogiri::HTML(open('http://www.lacuarta.com/feed/manager?type=rss&sc=TEFDVUFSVEE='))
 
     # Getting news
@@ -13,14 +15,20 @@ class LaCuartaProvider < ProviderStrategy
       subtitle = node.xpath('description/text()').text
       url = node.xpath('guid/text()')
 
-      return unless @persistence_delegate.should_download?(url)
+      return false unless @persistence_delegate.should_download?(url)
 
       noticedoc = Nokogiri::HTML(open(url.to_s))
       body = fetch_body noticedoc
       image = fetch_image noticedoc
       tags = fetch_tags noticedoc
 
-      notice = {title: '#{title}', subtitle: '#{subtitle}', url: '#{url}', tags: '#{tags}', body: '#{body}', image: '#{image}' }
+      notice = { title: "#{title}",
+                 source: 2,
+                 subtitle: "#{subtitle}",
+                 url: "#{url}",
+                 tags: "#{tags}",
+                 body: "#{body}",
+                 image: "#{image}" }
       @persistence_delegate.notify_new(notice)
     end
     news
